@@ -44,6 +44,15 @@ into the {body} of the default.hbs template --}}
             <section class="post-full-content">
                 <div class="post-content">
                     {{content}}
+                    <ul class="archives">
+                    {{#get "posts" limit="all"}}
+                        {{#foreach posts}}
+                            <li class="archive-item">
+                            <span>{{date published_at format="YYYY-MM-DD"}}&nbsp;<a href="{{url}}">{{title}}</a></span>
+                            </li>
+                        {{/foreach}}
+                    {{/get}}
+                    </ul>
                 </div>
             </section>
 
