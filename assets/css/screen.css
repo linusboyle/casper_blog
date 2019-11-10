@@ -1068,6 +1068,14 @@ make sure this only happens on large viewports / desktop-ish devices.
     box-shadow: var(--blue) 0 -1px 0 inset;
 }
 
+.post-full-content #gitalk-container a {
+    box-shadow: initial;
+}
+
+.post-full-content #gitalk-container a:hover {
+    box-shadow: initial;
+}
+
 .post-full-content strong,
 .post-full-content em {
     color: color(var(--darkgrey) l(-5%));

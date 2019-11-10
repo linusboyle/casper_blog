@@ -114,11 +114,8 @@ into the {body} of the default.hbs template --}}
                 {{> subscribe-form}}
             {{/if}}
 
-            {{!--
-            <section class="post-full-comments">
-                If you want to embed comments, this is a good place to do it!
+            <section class="post-full-comments" id="gitalk-container">
             </section>
-            --}}
 
         </article>
 
@@ -173,7 +170,6 @@ into the {body} of the default.hbs template --}}
     </div>
 </aside>
 
-{{/post}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
@@ -209,6 +205,18 @@ into the {body} of the default.hbs template --}}
                 $this.children('.author-card').removeClass('hovered');
             }, 800);
         });
+        var gitalk = new Gitalk({
+            clientID: '4dc42fc50d0e5228f895',
+            clientSecret: '0e6b48d493f30bbae58c9a5752d5e4bc63345a2c',
+            repo: 'linusboyle.cn',
+            owner: 'linusboyle',
+            admin: ['linusboyle'],
+            id: '{{title}}',
+            labels: ['COMMENTS','GITALK'] 
+        });
+        gitalk.render('gitalk-container');
     });
 </script>
 {{/contentFor}}
+
+{{/post}}
