@@ -935,7 +935,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     justify-content: flex-start;
     align-items: center;
     color: var(--midgrey);
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     line-height: 1.4em;
     font-weight: 600;
     text-transform: uppercase;
