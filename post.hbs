@@ -170,7 +170,20 @@ into the {body} of the default.hbs template --}}
 
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "stylesheet"}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+{{/contentFor}}
+
 {{#contentFor "scripts"}}
+
+{{!-- gitalk --}}
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+{{!-- katex --}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" ></script>
+
 <script>
     $(document).ready(function () {
         // FitVids - start
@@ -203,6 +216,7 @@ into the {body} of the default.hbs template --}}
                 $this.children('.author-card').removeClass('hovered');
             }, 800);
         });
+
         var gitalk = new Gitalk({
             clientID: '4dc42fc50d0e5228f895',
             clientSecret: '0e6b48d493f30bbae58c9a5752d5e4bc63345a2c',
