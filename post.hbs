@@ -229,6 +229,18 @@ into the {body} of the default.hbs template --}}
         gitalk.render('gitalk-container');
     });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters:
+      [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false},
+      ]
+    });
+});
+</script>
 {{/contentFor}}
 
 {{/post}}
