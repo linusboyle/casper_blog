@@ -611,7 +611,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-wrap: wrap;
     margin: 0 -20px;
-    padding: 50px 0 0;
+    padding: 100px 0 0;
     background: #fff;
 }
 
@@ -905,7 +905,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 650px) {
     .post-feed {
-        padding-top: 5vw;
+        padding-top: 25vw;
     }
 
     .post-card {
