@@ -578,6 +578,20 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
 }
 
+.page-blog-meta .site-nav-main {
+    z-index: 100;
+}
+
+.page-blog-meta .site-nav-main .site-nav {
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+.page-blog-meta .site-nav-main .fixed-nav-active {
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
+}
+
 @media (max-width: 700px) {
     .site-home-header .site-nav {
         margin-left: -5vw;
