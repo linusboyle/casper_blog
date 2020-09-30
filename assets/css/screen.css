@@ -592,6 +592,20 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
 }
 
+.page-trash-meta .site-nav-main {
+    z-index: 100;
+}
+
+.page-trash-meta .site-nav-main .site-nav {
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+.page-trash-meta .site-nav-main .fixed-nav-active {
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
+}
+
 @media (max-width: 700px) {
     .site-home-header .site-nav {
         margin-left: -5vw;
@@ -1103,25 +1117,62 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0;
 }
 
+/*.post-full-content a {*/
+    /*color: var(--darkgrey);*/
+    /*word-break: break-word;*/
+    /*box-shadow: var(--darkgrey) 0 -1px 0 inset;*/
+    /*transition: all 0.2s ease-in-out;*/
+/*}*/
+
 .post-full-content a {
-    color: var(--darkgrey);
     word-break: break-word;
-    box-shadow: var(--darkgrey) 0 -1px 0 inset;
-    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    /*color: inherit;*/
+    color: var(--darkgrey);
+    transition-property: background;
+    transition-duration: 0.2s;
 }
 
+.post-full-content a:after {
+  position: relative;
+  content: "\FEFF°";
+  margin-left: 0.10em;
+  font-size: 90%;
+  top: -0.10em;
+  color: #933;
+  font-feature-settings: "caps";
+  font-variant-numeric: normal;
+}
+
+/*.post-full-content a:hover {*/
+    /*color: var(--blue);*/
+    /*text-decoration: none;*/
+    /*box-shadow: var(--blue) 0 -1px 0 inset;*/
+/*}*/
+
 .post-full-content a:hover {
-    color: var(--blue);
-    text-decoration: none;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+  background: #c8c8c8;
+  transition-property: background;
+  transition-duration: 0.2s;
+  border-radius: 8px;
+  text-decoration: none;
 }
 
 .post-full-content #gitalk-container a {
-    box-shadow: initial;
+    text-decoration: none;
+    color: inherit;
+    transition: none;
 }
 
 .post-full-content #gitalk-container a:hover {
-    box-shadow: initial;
+  background: inherit;
+  transition: none;
+  border-radius: inherit;
+  text-decoration: none;
+}
+
+.post-full-content #gitalk-container a:after {
+  display: none;
 }
 
 .post-full-content strong,
@@ -1204,7 +1255,7 @@ Usage (In Ghost editor):
     color: inherit;
     font-size: inherit;
     line-height: inherit;
-    font-style: italic;
+    /*font-style: italic;*/
 }
 
 .post-full-content blockquote p:last-child {
