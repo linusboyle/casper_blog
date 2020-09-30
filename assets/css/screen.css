@@ -1154,21 +1154,39 @@ make sure this only happens on large viewports / desktop-ish devices.
   background: #c8c8c8;
   transition-property: background;
   transition-duration: 0.2s;
-  border-radius: 8px;
+  /*border-radius: 8px;*/
   text-decoration: none;
 }
 
-.post-full-content #gitalk-container a {
-    text-decoration: none;
+.post-full-content .kg-card a {
+    text-decoration: inherit;
     color: inherit;
-    transition: none;
+    transition: inherit;
+}
+
+.post-full-content #gitalk-container a
+{
+    text-decoration: inherit;
+    color: inherit;
+    transition: inherit;
+}
+
+.post-full-content .kg-card a:hover {
+  background: inherit;
+  transition: inherit;
+  /*border-radius: inherit;*/
+  text-decoration: inherit;
 }
 
 .post-full-content #gitalk-container a:hover {
   background: inherit;
-  transition: none;
-  border-radius: inherit;
-  text-decoration: none;
+  transition: inherit;
+  /*border-radius: inherit;*/
+  text-decoration: inherit;
+}
+
+.post-full-content .kg-card a:after {
+  display: none;
 }
 
 .post-full-content #gitalk-container a:after {
